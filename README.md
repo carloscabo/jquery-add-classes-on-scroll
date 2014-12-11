@@ -8,5 +8,5 @@ You can set several limit / elemets at once as follows:
       // pixels, class, target object if undefined body
       [100, 'scroll-over-100px'],
       [600, 'scroll-over-500px', $('html')],
-      [$('.main-sub-menu').offset().top, 'scroll-over-element']
+      [$('.main-sub-menu').offset().top, 'class-element-reached']
     ]);

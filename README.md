@@ -2,7 +2,7 @@ jquery-add-classes-on-scroll
 ============================
 
 Add / remove classes to elements / body when scroll surpass limit in pixels / element offset.
-You can set several limit / elemets at once as follows:
+You can define several limit / elements at once as follows:
 
     addClassesOnScroll.init([
       // pixels, class, target object if undefined body

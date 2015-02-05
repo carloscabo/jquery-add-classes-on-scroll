@@ -1,20 +1,24 @@
 /*
 JQuery addClassesOnScroll by Carlos Cabo, parts by Viíctor Ortíz Heredia
-https://github.com/carloscabo/jquery-add-classes-on-scroll
-2014 / 12 / 11
+https://github.com/carloscabo/jquery-add-class-on-scroll
+2015 / 02 / 05
 
 // Usage
-addClassesOnScroll.init([
-  // pixels, class to toggle, target object if undefined $('body')
-  [100, 'scroll-over-100px'],
-  [600, 'scroll-over-500px', $('html')],
-  [$('.main-sub-menu').offset().top, 'class-element-reached']
-]);
+(function($){
+
+  addClassesOnScroll.init([
+    // pixels, class, target object if undefined body
+    [100, 'scroll-over-100px'],
+    [600, 'scroll-over-500px', $('html')],
+    [$('.main-sub-menu').offset().top, 'class-to-set']
+  ]);
+
+});
 */
 
 addClassesOnScroll = {
   el: {
-    $win: $(window)
+    $win: null
   },
   settings: [
     // pixels, 'class_name', $(target_selector)
@@ -23,6 +27,7 @@ addClassesOnScroll = {
 
   init: function (options) {
     var _t = this;
+    _t.el.$win = $(window);
     $.extend(true, _t.settings, options);
 
     // Initial
@@ -35,6 +40,7 @@ addClassesOnScroll = {
       _t.set_remove_class();
     });
   },
+
   set_remove_class: function () {
     var _t = this;
     for (var i = _t.settings.length - 1; i >= 0; i--) {
@@ -49,3 +55,4 @@ addClassesOnScroll = {
     };
   },
 };
+
